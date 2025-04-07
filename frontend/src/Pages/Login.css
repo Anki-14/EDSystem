@@ -1,4 +1,4 @@
-/* Centering the Login/Signup Form */
+/* Centering the Login/Signup Form
 .login-container {
     max-width: 350px;
     margin: 50px auto;
@@ -13,7 +13,6 @@
     align-items: center;
   }
   
-  /* Title */
   .login-title {
     font-size: 2rem;
     color: #333;
@@ -21,7 +20,6 @@
     font-weight: bold;
   }
   
-  /* Input Fields */
   .login-input {
     width: 100%;
     padding: 12px;
@@ -32,7 +30,6 @@
     text-align: center;
   }
   
-  /* Buttons */
   .login-button {
     width: 100%;
     padding: 12px;
@@ -49,7 +46,6 @@
     background-color: #0056b3;
   }
   
-  /* Toggle Text */
   .toggle-text {
     margin-top: 10px;
     color: #007bff;
@@ -60,4 +56,103 @@
   .toggle-text:hover {
     text-decoration: underline;
   }
-  
+   */
+
+   /* Background Styling */
+
+
+/* Centered Login Container */
+/* Overall Layout Centering */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0f0f, #1c1b2e); /* black to deep purple gradient */
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Glassy Container */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: 16px;
+  background: rgba(25, 25, 50, 0.3); /* dark bluish-purple glass */
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Title */
+.login-title {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: #a084e8; /* soft purple */
+}
+
+/* Inputs */
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0f0f0;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.login-input::placeholder {
+  color: #b5b5b5;
+}
+
+.login-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: linear-gradient(to right, #a084e8, #7f6ed6);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.login-button:hover {
+  transform: scale(1.05);
+}
+
+/* Toggle Link */
+.toggle-text {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #c2bfff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.toggle-text:hover {
+  color: #a084e8;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+}
