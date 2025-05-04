@@ -1,5 +1,5 @@
 services:
-  - type: statis
+  - type: static
     name: edsystem-frontend
     env: static
     rootDir: frontend
