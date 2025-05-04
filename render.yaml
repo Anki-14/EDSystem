@@ -1,7 +1,7 @@
 services:
   - type: web
     name: edsystem-frontend
-    runtime: static
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    publishPath: dist
+    env: static
+    root_dir: frontend
+    build_command: npm install && npm run build
+    publish_path: dist
