@@ -508,6 +508,8 @@ import { Link } from "react-router-dom";
 
 
 const EmotionDetection = () => {
+  const backendBaseURL = "https://emotion-backend-nubf.onrender.com";
+
   const [emotion, setEmotion] = useState("");
   const [mode, setMode] = useState("real-time");
   const [selectedFile, setSelectedFile] = useState(null);
@@ -521,7 +523,7 @@ const EmotionDetection = () => {
 
   useEffect(() => {
     if (mode === "real-time" && isLoggedIn) {
-      setVideoFeedUrl("http://localhost:5000/video_feed");
+      setVideoFeedUrl("${backendBaseURL}/video_feed");
     } else {
       setVideoFeedUrl(null);
     }
@@ -533,7 +535,7 @@ const EmotionDetection = () => {
 
     const fetchEmotion = async () => {
       try {
-        const response = await fetch("http://localhost:5000/get_emotion");
+        const response = await fetch("${backendBaseURL}/get_emotion");
         const data = await response.json();
         setEmotion(data.emotion);
       } catch (error) {
@@ -550,7 +552,7 @@ const EmotionDetection = () => {
     // Stop camera if switching away from real-time
     if (mode === "real-time" && newMode !== "real-time") {
       try {
-        await axios.post("http://localhost:5000/stop_video_feed");
+        await axios.post("${backendBaseURL}/stop_video_feed");
       } catch (err) {
         console.error("Failed to stop video feed:", err);
       }
@@ -579,7 +581,7 @@ const EmotionDetection = () => {
     formData.append("file", selectedFile);
 
     try {
-      const response = await axios.post("http://localhost:5000/upload-emotion", formData, {
+      const response = await axios.post("${backendBaseURL}/upload-emotion", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setEmotion(response.data.emotion);
