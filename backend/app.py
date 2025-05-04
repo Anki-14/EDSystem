@@ -675,6 +675,9 @@ def detect_emotion():
         detected_emotions.append(emotion)
 
     return jsonify({"emotion": detected_emotions[0] if detected_emotions else "No face detected"})
+@app.route("/")
+def index():
+    return "Backend is live"
 
 # Run Server
 if __name__ == '__main__':
