@@ -509,7 +509,7 @@ import { Link } from "react-router-dom";
 
 const EmotionDetection = () => {
   const backendBaseURL = "https://emotion-backend-nubf.onrender.com";
-
+  const imageUrl = `${backendBaseURL}${response.data.image}`;
   const [emotion, setEmotion] = useState("");
   const [mode, setMode] = useState("real-time");
   const [selectedFile, setSelectedFile] = useState(null);
@@ -585,6 +585,11 @@ const EmotionDetection = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setEmotion(response.data.emotion);
+setSelectedFile({
+  ...selectedFile,
+  previewUrl: `${backendBaseURL}${response.data.image}`,
+});
+
 
       // 👉 If not logged in, mark demo as used
       if (!isLoggedIn) {
@@ -680,8 +685,19 @@ const EmotionDetection = () => {
     )}
 
     {emotion && (
-      <div className="emotion-result">Detected Emotion: {emotion}</div>
-    )}
+  <>
+    <div className="emotion-result">Detected Emotion: {emotion}</div>
+    {selectedFile?.previewUrl && emotion && (
+  <img
+    src={selectedFile.previewUrl}
+    alt="Uploaded preview"
+    className="preview-result"
+  />
+)}
+
+  </>
+)}
+
   </>
 )}
 
