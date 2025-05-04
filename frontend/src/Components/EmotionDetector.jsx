@@ -523,7 +523,7 @@ const EmotionDetection = () => {
 
   useEffect(() => {
     if (mode === "real-time" && isLoggedIn) {
-      setVideoFeedUrl("${backendBaseURL}/video_feed");
+      setVideoFeedUrl(`${backendBaseURL}/video_feed`);
     } else {
       setVideoFeedUrl(null);
     }
@@ -535,7 +535,7 @@ const EmotionDetection = () => {
 
     const fetchEmotion = async () => {
       try {
-        const response = await fetch("${backendBaseURL}/get_emotion");
+        const response = await fetch(`${backendBaseURL}/get_emotion`);
         const data = await response.json();
         setEmotion(data.emotion);
       } catch (error) {
@@ -552,7 +552,7 @@ const EmotionDetection = () => {
     // Stop camera if switching away from real-time
     if (mode === "real-time" && newMode !== "real-time") {
       try {
-        await axios.post("${backendBaseURL}/stop_video_feed");
+        await axios.post(`${backendBaseURL}/stop_video_feed`);
       } catch (err) {
         console.error("Failed to stop video feed:", err);
       }
@@ -581,7 +581,7 @@ const EmotionDetection = () => {
     formData.append("file", selectedFile);
 
     try {
-      const response = await axios.post("${backendBaseURL}/upload-emotion", formData, {
+      const response = await axios.post(`${backendBaseURL}/upload-emotion`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setEmotion(response.data.emotion);
