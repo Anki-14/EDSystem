@@ -65,19 +65,23 @@
 /* Overall Layout Centering */
 .login-wrapper {
   min-height: 100vh;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0f0f0f, #1c1b2e); /* black to deep purple gradient */
+  background: linear-gradient(135deg, #0f0f0f, #1c1b2e); 
   padding: 20px;
-  position: relative;
+  position:relative;
   box-sizing: border-box;
 }
+
+
 
 /* Glassy Container */
 .login-container {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
+  margin-left: 10px;
   padding: 40px;
   border-radius: 16px;
   background: rgba(25, 25, 50, 0.3); /* dark bluish-purple glass */
@@ -89,7 +93,7 @@
 
 /* Title */
 .login-title {
-  font-size: 2rem;
+  font-size: 4rem;
   margin-bottom: 25px;
   font-weight: bold;
   color: #a084e8; /* soft purple */
@@ -119,7 +123,7 @@
 
 /* Button */
 .login-button {
-  width: 100%;
+  width: 50%;
   padding: 12px;
   margin-top: 10px;
   background: linear-gradient(to right, #a084e8, #7f6ed6);
@@ -139,7 +143,7 @@
 /* Toggle Link */
 .toggle-text {
   margin-top: 15px;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   color: #c2bfff;
   cursor: pointer;
   transition: 0.3s ease;

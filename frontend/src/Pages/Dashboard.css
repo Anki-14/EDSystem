@@ -1,94 +1,137 @@
-/* Center the entire dashboard */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Centered Content */
 .dashboard-container {
-    max-width: 600px; /* Reduced width for better centering */
-    margin: 40px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  max-width: 800px;
+  width: 100%;
+  /* margin: 0 auto; */
+  padding: 40px 20px;
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  /* margin: 100px auto; */
+  margin-left: 300px;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  font-size: 2.2rem;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+/* Section Styling */
+.section {
+
+  width: 100%;
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  /* color:black !important; */
+  margin-bottom: 15px;
+}
+
+/* User Profile */
+#userprofile{
+  color:#222 !important;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.profile p {
+  font-size: 1rem;
+  color: black;
+  margin: 5px 0;
+}
+
+/* Past Analysis Cards */
+.past-analysis {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card {
+  width: 130px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fafafa;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Sticky Footer */
+.footer {
+  width: 100%;
+  background-color: #222;
+  color: #eee;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+}
+.section-title, .profile p, .card p {
+  color: black; /* Explicitly set black color */
+}
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px 10px;
   }
-  
-  /* Title Styling */
-  .dashboard-title {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  /* Section Styling */
-  .section {
-    width: 100%;
-    background: #fff;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Section Title */
-  .section-title {
-    font-size: 1.5rem;
-    color: #444;
-    margin-bottom: 15px;
-  }
-  
-  /* User Profile */
-  .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .profile p {
-    font-size: 1rem;
-    color: #333;
-    margin: 5px 0;
-  }
-  
-  /* Past Analysis */
-  .past-analysis {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-  
-  /* Emotion Cards */
+
   .card {
-    width: 120px;
-    padding: 10px;
-    border-radius: 8px;
-    background: #f4f4f4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    width: 100px;
   }
-  
-  .card img {
-    width: 100%;
-    border-radius: 5px;
-  }
-  
-  .card p {
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 5px;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .dashboard-container {
-      width: 90%;
-      padding: 15px;
-    }
-  
-    .card {
-      width: 100px;
-    }
-  }
-  
+}

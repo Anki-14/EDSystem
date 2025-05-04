@@ -1,44 +1,66 @@
-.nav-container{
+.nav-container {
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
 }
-.nav-links{
+
+.nav-links {
     display: flex;
     list-style: none;
     gap: 25px;
-    margin-left: 700px;
-    margin-top: 25px;
-    /* margin-right: 15px; */
-    /* color: white; */
-}
-.nav-links li a {
-    color: white;  /* Ensures links are white */
-    text-decoration: none; /* Removes underline */
-    font-size: 18px;
-    font-weight: 500;
+    margin-right: 70px;
 }
 
-.nav-title{
-    margin-left: 30px;
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
 }
+
+.nav-links li a:hover {
+    color: #ddd;
+}
+
+.nav-title {
+    margin-left: 30px;
+    margin-right: auto;
+}
+
 .nav-title a {
-    color: white;  /* Makes the text white */
-    text-decoration: none; /* Removes underline */
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .nav-title a:hover {
-    color: lightgray; /* Optional: Change color on hover */
+    color: #ddd;
 }
 
 .navbar {
-    position: fixed;  /* Fix navbar at the top */
-    top: 0;  /* Ensure it sticks to the top */
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%;  /* Full width */
-    height: 60px;  /* Set height as needed */
+    width: 100%;
+    height: 60px;
     background: rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
-    padding: 0 20px;  /* Add padding for spacing */
-    z-index: 1000; /* Ensure it's above other elements */
-    /* backdrop-filter: blur(10px); */
+    padding: 0 20px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
+
+.logout-button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .logout-button:hover {
+    text-decoration: underline;
+  }
+  
